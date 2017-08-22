@@ -1,6 +1,6 @@
 package scjp.levelone;
 
-public class Arrays {
+public class MyArrays {
 	public static void main(String[] args){
 		
 	}

@@ -1,6 +1,6 @@
 package scjp.levelone;
 
-public class Test {
+public class Test1 {
 	
 	static String s = "-";
 	
