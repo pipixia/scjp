@@ -9,6 +9,7 @@ public class Foundation{
 		
 		//
 		int i = 0xFFFFFFF1;
+		Util.print(String.valueOf(i)); //print -15
 		int j = ~i;
 		Util.print(String.valueOf(j));
 		
@@ -18,15 +19,15 @@ public class Foundation{
 		Double myDouble = new Double (42.0);
 		Short myShort = new Short((short)42);
 		Util.print(myInteger.equals(42));//true
-		Util.print(myInteger.equals(myShort));//false ******
-		Util.print(myInteger.equals(myLong));//false ******
+		Util.print(myInteger.equals(myShort));//false ****** equals should only happen in same wrapper type
+		Util.print(myInteger.equals(myLong));//false ****** because of obj instanceof Double(or Long, Integer)
 		Util.print(myDouble.equals(myInteger));//false
 		Util.print(myInteger.equals(myDouble));//false
 		
 		//String
 		String str1 = "abc";
 		String str2 = "abc";
-		String str3 = new String("abc");
+		String str3 = new String("abc");// THis line, Two Objects created in memory
 		String str4 = str3.intern();
 		// any two strings s and t, s.intern() == t.intern() is true 
 		// if and only if s.equals(t) is true. 
