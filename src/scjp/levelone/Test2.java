@@ -79,5 +79,13 @@ public class Test2 {
 		String str = null; 
 		String str1="abc"; 
 		//System.out.println(str1.equals("abc") | str.equals(null)); // java.lang.NullPointerException
+		
+		unboxing(new Long(100));//Unboxing to long, then Primitive type long formal argument :100
 	}
+	
+	public static void unboxing(long i)
+    {
+         
+        System.out.println("Primitive type long formal argument :" + i);
+    }
 }

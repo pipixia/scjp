@@ -25,7 +25,7 @@ public class ClassInitializationNPolymorphism {
 		Father f = new Son();
 		
 		//Polymorphism is only for instance methods, not applying field and static methods
-		//Output : 
+		//Output : No static block because it has been called. Only one time 
 		/*
 		father-init-block
 		father-constructor

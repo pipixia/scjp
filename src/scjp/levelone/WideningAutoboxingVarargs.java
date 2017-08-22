@@ -8,7 +8,6 @@ package scjp.levelone;
  * 		-	Widening beats var-args
  * 		-	autoboxing beat var-args (Loser)
  * 	    -	You CANNOT widen from one wrapper type to another. (IS-A fails.)
- * 		- 	Windening & Autoboxign can NOT happen at the same time.
  * 			You CANNOT widen and then box. (An int can't become a Long.) ie. byte to Integer.
  * 			class WidenAndBox {
 				static void go(Long x) { System.out.println("Long"); }
@@ -19,7 +18,7 @@ package scjp.levelone;
 						   // applied to (byte)
 				}
 			}
-		- 	You can autobox and then widen. (An int can become an Object, via Integer.)
+		- 	You can autobox and then widen. (An int can autobox to Integer, and then widen to an Object)
 		- 	You can combine var-args with either widening or boxing.
 		- 	As always, a var-args method will be chosen only if no non-var-arg method is possible
  */
@@ -92,4 +91,6 @@ public class WideningAutoboxingVarargs {
 		 */
 		
 	}
+	
+	
 }
