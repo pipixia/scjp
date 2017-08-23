@@ -10,20 +10,12 @@ public class PrimitiveNumbers {
 		long l = 130L;
 		System.out.println(Long.toBinaryString(128));
 		byte b = (byte)128;
-		System.out.println(Integer.parseInt("1000", 2));
-short s2 = 0600;
+		System.out.println("Integer.parseInt(\"1000\", 2) = " + Integer.parseInt("1000", 2));
+		short s2 = 0600;
 		byte s = (new Integer(100000)).byteValue(); //equivalent to "(byte) (100000)"
 		System.out.println(s);
 		System.out.println((byte) (100000));
 		
-		Map mngtMap = new HashMap();
-		mngtMap.put("nme-burn-olt1", "2004");
-		mngtMap.put("nme-quee-olt1", "2002");
-		mngtMap.put("nme-coll-olt1", "2003");
-		
-		if(mngtMap.containsKey("nme-burn-olt1")){
-			System.out.println(mngtMap.get("nme-burn-olt1"));
-		}
 	}
 	
 	private void bytes(){
@@ -32,8 +24,7 @@ short s2 = 0600;
 		byte b = 8; // No problem, 8 fits in a byte
 		byte c = 3 + 8; // No problem, 11 fits in a byte
 		b += 500;//No problem, equivalent to b = (byte) (b + 500) 
-		byte e = (byte) (a + b); //No problem 
-		
+		byte e = (byte) (a + b); //No problem 		
 		//Compile Error 
 		//byte f = 129; // Compile error: Good from -128 to 127
 		//byte d = a + b; // Compile error : possible loss of precision, can't convert int to byte
@@ -46,9 +37,9 @@ short s2 = 0600;
 	}
 	
 	private void longs(){
-		//32-bit signed two's complement integer.
-		//Minimum value is - 2,147,483,648 (-2^31)
-		//Maximum value is 2,147,483,647(inclusive) (2^31 -1)
+		//54-bit signed two's complement integer.
+		//Minimum value is - 9,223,372,036,854,775,808 (-2^63)
+		//Maximum value is   9,223,372,036,854,775,807(inclusive) (2^63 -1)
 	}
 	
 	private void shorts(){
@@ -72,7 +63,7 @@ short s2 = 0600;
 		char m = (char)(a+b);
 	
 		//Compile error:
-		//char m = a + b;
+		//char m = a + b; // Type mismatch: cannot convert from int to char
 	}
 	
 	private void implicit(){
@@ -140,16 +131,23 @@ short s2 = 0600;
 	
 	private static void compare(){
 		Long objL = new Long(100);
+		long l = 100L;
+		double d = 100.0;
 		Integer objI = new Integer(100);
 		int i = 100;
 		byte b = 100;
-		
-		if(objL == i) System.out.println("Long 100 == int 100");//OK
-		if(objL.equals(i)) System.out.println("Long 100 equals to int 100");//NOT
-		
+		char c = 100;
+		float f = 100.0f;
 		if(objL == b) System.out.println("Long 100 == byte 100");//OK
-		if(objL.equals(b)) System.out.println("Long 100 equals to byte 100");//NOT
+		if(objL == l) System.out.println("Long 100 == long 100");//OK
+		if(objL == d) System.out.println("Long 100 == double 100");//OK
+		if(objL == c) System.out.println("Long 100 == char 100");//OK
+		if(objL == f) System.out.println("Long 100 == float 100");//OK
+		if(objL == i) System.out.println("Long 100 == int 100");//OK
 		
+		if(objL.equals(l)) System.out.println("Long 100 equals to long 100");//NOT
+		if(objL.equals(i)) System.out.println("Long 100 equals to int 100");//NOT		
+		if(objL.equals(b)) System.out.println("Long 100 equals to byte 100");//NOT		
 		if(objL.equals(objI)) System.out.println("Long 100 equals Integer 100");//NOT
 		
 		/*

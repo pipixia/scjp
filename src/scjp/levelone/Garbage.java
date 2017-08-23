@@ -12,7 +12,7 @@ public class Garbage {
 		a1 = null;
 		b1 = null;
 		b2 = null;
-		// Go here, only 1 object eligible for garbage collection (it is a1)
+		// Go here, only 1 object eligible for garbage collection (it is "a1")
 		// Alpha.b1 is static, so it can be accessed by any Alpah Class 
 		// even though a1 has bee null
 		System.out.println(a2.b1.toString()); 
