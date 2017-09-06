@@ -2,6 +2,12 @@ package scjp.levelone;
 
 import java.util.*;
 
+/*
+ * 
+ * 
+ * 
+ */
+
 public class PrimitiveNumbers {
 	public static void main(String args[]){
 		
@@ -138,6 +144,8 @@ public class PrimitiveNumbers {
 		byte b = 100;
 		char c = 100;
 		float f = 100.0f;
+		
+		//Wrapper == primitive, Only care about value
 		if(objL == b) System.out.println("Long 100 == byte 100");//OK
 		if(objL == l) System.out.println("Long 100 == long 100");//OK
 		if(objL == d) System.out.println("Long 100 == double 100");//OK
@@ -145,6 +153,10 @@ public class PrimitiveNumbers {
 		if(objL == f) System.out.println("Long 100 == float 100");//OK
 		if(objL == i) System.out.println("Long 100 == int 100");//OK
 		
+		if(objI == l) System.out.println("Integer 100 == long 100");//OK
+		if(objI == b) System.out.println("Integer 100 == byte 100");//OK
+		
+		//Wrapper (like Integer) equals need the same Wrapper Type
 		if(objL.equals(l)) System.out.println("Long 100 equals to long 100");//NOT
 		if(objL.equals(i)) System.out.println("Long 100 equals to int 100");//NOT		
 		if(objL.equals(b)) System.out.println("Long 100 equals to byte 100");//NOT		
